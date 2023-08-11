@@ -4,6 +4,7 @@ import About from "./routes/About/about";
 import Book from "./routes/Book/book";
 import SingleBook from "./routes/Book/singleBook";
 import CreateBook from "./routes/Book/createBook";
+import EditBook from "./routes/Book/editbook";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 function App() {
@@ -17,6 +18,7 @@ function App() {
           <Route path="/books" element={<Book/>}></Route>
           <Route path="/books/:slug" element={<SingleBook/>}></Route>
           <Route path="/createbook" element={<CreateBook/>}></Route>
+          <Route path="/editbook/:slug" element={<EditBook/>}></Route>
         </Routes>
         <Footer/>
       </Router>
