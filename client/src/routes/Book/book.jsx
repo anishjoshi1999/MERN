@@ -37,7 +37,7 @@ function Book() {
       <p>
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis, dolorem?
       </p>
-
+      <Link to={`/createbook`}>+ Add New Book</Link>
       <h2>Fetch Example</h2>
       <div className="filters">
         <label>Categories</label>
