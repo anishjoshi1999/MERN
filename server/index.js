@@ -13,6 +13,7 @@ app.use(cors());
 
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
+app.use("/uploads", express.static("uploads"));
 
 app.get("/", (req, res) => {
   res.json("Hello mate");
@@ -20,7 +21,12 @@ app.get("/", (req, res) => {
 
 app.get("/api/books", async (req, res) => {
   try {
-    const data = await Book.find({});
+    const category = req.query.category;
+    const filter = {};
+    if (category) {
+      filter.category = category;
+    }
+    const data = await Book.find(filter);
     res.json(data);
   } catch (error) {
     res.status(500).json({ error: "An error occurred while fetching books." });
